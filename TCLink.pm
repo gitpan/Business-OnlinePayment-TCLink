@@ -10,7 +10,7 @@ require Exporter;
 @ISA = qw(Exporter AutoLoader Business::OnlinePayment);
 @EXPORT = qw();
 @EXPORT_OK = qw();
-$VERSION = '1.01';
+$VERSION = '1.03';
 
 sub set_defaults {
     my $self = shift;
@@ -133,7 +133,7 @@ sub submit {
 
     my %results = Net::TCLink::send(\%params);
 
-    if($results{'status'} eq 'approved') { # Authorized/Pending/Test
+    if($results{'status'} eq 'approved' or $results{'status'} eq 'accepted') {
         $self->is_success(1);
         $self->result_code($results{'status'});
         $self->authorization($results{'avs'});
@@ -141,7 +141,20 @@ sub submit {
     } else {
         $self->is_success(0);
         $self->result_code($results{'status'});
-        $self->error_message($results{'offenders'});
+
+        my $error;
+        if ($results{'status'} eq 'decline') {
+            if ($results{'declinetype'} eq 'carderror') {
+                $error = 'The credit card number is invalid.';
+            } else {
+                $error = 'The credit card transaction was declined.';
+            }
+	} elsif ($results{'status'} eq 'baddata') {
+            $error = 'The transaction data is invalid.';
+	} elsif ($results{'status'} eq 'error') {
+            $error = 'There was a network failure during processing.';
+	}
+        $self->error_message($error);
     }
 }
 
