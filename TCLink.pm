@@ -101,7 +101,7 @@ sub submit {
 	order_number   => 'transid'
     );
 
-    if($self->transaction_type() eq "echeck") {
+    if($self->transaction_type() eq "ach") {
         $self->required_fields(qw/type login password action amount first_name
                                   last_name account_number routing_code/);
     } elsif($self->transaction_type() eq 'cc' ) {

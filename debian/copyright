@@ -1,9 +1,16 @@
+The Debian maintainer is:
+Dan Helfman <witten@debian.org>
+
+The upstream author is: 
+Dan Helfman <dan@trustcommerce.com>
+
+Derived from code by Jason Kohles and Ivan Kohler.
+
 Copyright (c) 2002 TrustCommerce
 All rights reserved. This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
 
-The upstream author is: 
-
-Dan Helfman <dan@trustcommerce.com>
-
-Derived from code by Jason Kohles and Ivan Kohler.
+Perl is licensed under the GNU GPL or the Artistic License.  On Debian
+systems, the full text of the GPL may be found in the file
+/usr/share/common-licenses/GPL, and the full text of the Artistic license may
+be found in the file /usr/share/common-licenses/Artistic.

@@ -1,7 +1,0 @@
-# Automatically added by dh_installdocs
-if [ "$1" = "configure" ]; then
-	if [ -d /usr/doc -a ! -e /usr/doc/libbusiness-onlinepayment-tclink-perl -a -d /usr/share/doc/libbusiness-onlinepayment-tclink-perl ]; then
-		ln -sf ../share/doc/libbusiness-onlinepayment-tclink-perl /usr/doc/libbusiness-onlinepayment-tclink-perl
-	fi
-fi
-# End automatically added section

@@ -1,12 +1,20 @@
 Source: libbusiness-onlinepayment-tclink-perl
 Section: interpreters
 Priority: optional
-Build-Depends: debhelper (>= 3.0.5), perl (>= 5.6.0-17)
-Maintainer: Dan Helfman <dan@trustcommerce.com>
+Build-Depends-Indep: debhelper (>= 3.0.5), perl (>= 5.6.0-17)
+Maintainer: Dan Helfman <witten@debian.org>
 Standards-Version: 3.5.1
 
 Package: libbusiness-onlinepayment-tclink-perl
 Architecture: all
 Depends: ${perl:Depends}, libnet-tclink-perl
 Description:  TrustCommerce backend for Business::OnlinePayment
- For detailed information see Business::OnlinePayment.
+ This is Business::OnlinePayment::TCLink, a Business::OnlinePayment
+ backend module for the TrustCommerce payment gateway. It is only useful if
+ you have an account with TrustCommerce: http://www.trustcommerce.com/
+ .
+ Business::OnlinePayment is a generic interface for processing payments through
+ online credit card processors, online check acceptance houses, etc. (If you
+ like buzzwords, call it an "multiplatform ecommerce-enabling middleware
+ solution").
+

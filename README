@@ -1,6 +1,6 @@
 
 
-                    Business::OnlinePayment::TCLink v1.01
+                    Business::OnlinePayment::TCLink v1.02
                        copyright (C) TrustCommerce 2002
 
 All rights reserved. This program is free software; you can redistribute it
@@ -9,7 +9,7 @@ and/or modify it under the same terms as Perl itself.
                          http://www.trustcommerce.com
                          developer@trustcommerce.com
 
-                                 May 28, 2002
+                                 Nov 4, 2002
 
 I. DESCRIPTION
 
